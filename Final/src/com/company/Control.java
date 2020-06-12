@@ -1,8 +1,8 @@
 package com.company;
-
+//Interface for Customer
 public interface Control {
-    double delete = 0;
-    double add = 0;
-    double edit = 0;
+   void   setdelete(String fname);
+    void setadd(String lname);
+    double edit(int pin);
     
 }
