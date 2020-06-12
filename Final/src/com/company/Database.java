@@ -1,10 +1,7 @@
 package com.company;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.*;
+import java.util.ArrayList;
 
 public class Database {
 
@@ -57,9 +54,11 @@ public class Database {
     public void getdata(String sql) {
         try {
             Statement statement = connection.createStatement();
+            statement.execute("Insert into my.customer values (5,'alya','akhmet','333') ");
             ResultSet resultSet = statement.executeQuery(sql);
             String space = "             ";
             System.out.println("id" + space + "fname" + space + "lname" + space + "password");
+            ArrayList<Customer> customer = new ArrayList<Customer>();
             while (resultSet.next()) {
                 //System.out.printf("%-30.30s  %-30.30s%n", resultSet.getString("id"), resultSet.getString("name"),resultSet.getString("surname")
                 //  , resultSet.getString("position"), resultSet.getString("salary"));
