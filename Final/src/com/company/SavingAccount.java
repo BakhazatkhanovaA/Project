@@ -1,8 +1,9 @@
 package com.company;
 
-public class SavingAccount extends Account  implements Control{
 
-    public SavingAccount(double variable, double deposit, double withdraw, boolean balanceEnquiry) {
+public class SavingAccount extends Account  {
+
+    public SavingAccount(double variable, double deposit, double withdraw, String balanceEnquiry) {
         super(variable, deposit, withdraw, balanceEnquiry);
     }
     private double annualInterest;
@@ -16,6 +17,13 @@ public class SavingAccount extends Account  implements Control{
 
         return annualInterest;
     }
+    @Override
+    public String toString (){
+        System.out.println("You can save your account with"+getAnnualInterest()+"");
+    return null;
+    }
 
 }
+
+
 
