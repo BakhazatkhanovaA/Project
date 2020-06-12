@@ -1,14 +1,14 @@
 package com.company;
 
-public class Account implements Control{
+public class Account implements Information{
     private double variable;
     private double deposit;
     public double withdraw;
-    public boolean balanceEnquiry;
+    public String balanceEnquiry;
     public double balance;
 
 
-    public Account(double variable, double deposit, double withdraw, boolean balanceEnquiry) {
+    public Account(double variable, double deposit, double withdraw, String balanceEnquiry) {
         this.balanceEnquiry = balanceEnquiry;
         this.variable=variable;
         this.deposit = deposit;
@@ -47,12 +47,12 @@ public class Account implements Control{
         return withdraw;
     }
 
-    private void setBalanceEnquiry(boolean balanceEnquiry) {
+    private void setBalanceEnquiry(String balanceEnquiry) {
         this.balanceEnquiry = balanceEnquiry;
 
     }
 
-    public boolean getBalanceEnquiry() {
+    public String getBalanceEnquiry() {
         return balanceEnquiry;
     }
 
@@ -65,6 +65,29 @@ public class Account implements Control{
             balance = balance + variable;
             setBalance(balance);
         }
+
+    @Override
+    public String opennewbankaccount(double variable) {
+        System.out.println("We opened to you  new bank account with this "+variable+" sum! ");
+        return null;
+    }
+
+    @Override
+    public String getViewtransaction(double deposit) {
+        System.out.println("We finished with transaction, so you can see your "+deposit+"! ");
+        return null;
+    }
+
+    @Override
+    public String Viewbalance(double balance) {
+        System.out.println("At this moment your balance consists "+balance+" !");
+        return null;
+    }
+@Override
+    public String toString(){
+        return "This "+getBalance()+" is satisfied to our conditions,so it can put this "+variable+"to"+getDeposit()+" ";
+
+}
 
 
     }
